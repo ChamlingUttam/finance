@@ -19,6 +19,28 @@ model User {
   email    String @unique
   password String
 
+  transactions Transaction[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+}
+
+model Transaction {
+  id         Int @id @default(autoincrement())
+  userId     Int
+  type       TransactionType
+  category   String
+  amount     Float
+  date       DateTime @default(now())
+  created_At DateTime @default(now()) 
+  updated_At DateTime @default(now())
+
+  user       User @relation(fields: [userId],references: [id] ,onDelete: Cascade)
+
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
 }
