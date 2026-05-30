@@ -1,0 +1,33 @@
+### create
+POST http://localhost:5000/api/transaction/create
+Content-Type: application/json
+
+{
+    "category": "salary",
+    "type": "INCOME",
+    "amount": 30000,
+    "date": "2026-05-30"
+}
+
+
+### get all 
+
+GET http://localhost:5000/api/transaction/get
+
+
+###
+# GET http://localhost:5000/api/transaction/get/2
+###  get single
+GET http://localhost:5000/api/transaction/getSingle?type=INCOME
+
+
+####
+
+GET http://localhost:5000/api/transaction/getSingle?category=education
+
+
+
+
+### update
+
+

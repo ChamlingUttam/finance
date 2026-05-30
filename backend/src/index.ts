@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/user.route.js";
+import transactionRouter from "./routes/transaction.route.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cookieParser());
 
 // ROUTES
 app.use("/api/auth", authRoutes);
+app.use('/api/transaction',transactionRouter)
 
 
 // SERVER
